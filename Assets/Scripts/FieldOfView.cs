@@ -29,7 +29,7 @@ public class FieldOfView : MonoBehaviour {
 
 	void Update(){
 		if(viewAngle > 20f){
-			viewAngle -= 0.01f;
+			viewAngle -= 0.01f; //testtestetsetset
 		}
 	}
 
