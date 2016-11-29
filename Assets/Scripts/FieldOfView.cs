@@ -146,9 +146,13 @@ public class FieldOfView : MonoBehaviour {
 		RaycastHit hit; //gets info back from raycast
 
 		if (Physics.Raycast (transform.position, direction, out hit, viewRadius, obstacleMask)){ //if the raycast hits something
-			return new RaycastInfo(true, hit.point, hit.distance, globalAngle);//return the raycast info saying that we hit something,
-			//the point we hit, the distance to the hit, and the angle of the direction
-		} else { //if the raycast hit nothing
+            //print("hit a " + hit.transform.name); //this works but it will only return that it's hitting cubes
+            //hit.transform.SendMessage("Freeze", SendMessageOptions.DontRequireReceiver);
+            return new RaycastInfo(true, hit.point, hit.distance, globalAngle);//return the raycast info saying that we hit something,
+            //the point we hit, the distance to the hit, and the angle of the direction
+            
+
+        } else { //if the raycast hit nothing
 			return new RaycastInfo(false, transform.position + direction * viewRadius, viewRadius, globalAngle);//return the info saying no hit,
 			//the point as our position plus the direction multiplied by our fov radius, the length as our fov radius, and the angle of the direction
 		}

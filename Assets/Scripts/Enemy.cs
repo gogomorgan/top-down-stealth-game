@@ -54,7 +54,12 @@ public class Enemy : MonoBehaviour {
 		currentState = State.Idle;
 	}
 
-	void Update () {
+    void Freeze()
+    {
+        print("I was hit");
+    }
+
+    void Update () {
 		if(hasTarget){
 			Vector3 targetDirection = target.position - this.transform.position; //gets direction of target 
 			float targetAngle = Vector3.Angle(targetDirection,this.transform.forward); //gets angle to target
@@ -73,7 +78,14 @@ public class Enemy : MonoBehaviour {
 					}
 				}
 
-		 	if(targetInSight == true && movementActive == false){ //if the target is in sight but we're not moving
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 100.0f))
+                //print("Found an object - distance: " + hit.distance);
+                movementActive = false;
+
+
+            if (targetInSight == true && movementActive == false){ //if the target is in sight but we're not moving
 				movementActive = true; //set moving to true
 				AudioManager.instance.PlaySound(wakeAudio, transform.position); //play wake sound
 				//pathfinder.Resume(); //resume nav mesh agent if it was previously paused
@@ -95,10 +107,12 @@ public class Enemy : MonoBehaviour {
 				counter = 5; //reset counter
 			}
 		}
-	}
 
+    }
 
-	IEnumerator UpdatePath(){ //coroutine to update nav mesh path
+    
+
+    IEnumerator UpdatePath(){ //coroutine to update nav mesh path
 		float refreshRate = 0.25f; //time to wait before each run
 
 		while (hasTarget){ //while there is a target
