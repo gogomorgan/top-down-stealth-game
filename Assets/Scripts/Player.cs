@@ -4,6 +4,8 @@ using System.Collections;
 public class Player : LivingEntity {
 	
 	public float moveSpeed = 6;
+	public float walkSpeed = 6;
+	public float runSpeed = 6;
 	Vector3 velocity;
 	Rigidbody rb; 
 	Camera mainCam;
@@ -20,6 +22,10 @@ public class Player : LivingEntity {
 	void Update () {
 		Vector3 mousePos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.transform.position.y));
 		transform.LookAt (mousePos + Vector3.up * transform.position.y);
+		if (Input.GetKey (KeyCode.LeftShift)) {
+			moveSpeed = walkSpeed;
+		} else
+			moveSpeed = runSpeed;
 		velocity = new Vector3(Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical")).normalized * moveSpeed;
 	}
 
