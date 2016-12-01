@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 137acc099059b604aafce7d6241960ca
-timeCreated: 1480540357
+guid: 3acb014b51bca4b40a998591abba58e4
+timeCreated: 1480611500
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: TestMaze
+    4300000: Maze
   materials:
     importMaterials: 1
     materialName: 0
