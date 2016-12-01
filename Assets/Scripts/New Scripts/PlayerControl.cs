@@ -5,12 +5,11 @@ public class PlayerControl : MonoBehaviour {
 
     public float sneakSpeed = 3;
     public float walkSpeed = 5;
-    public float runSpeed = 10;
 
     public KeyCode sneak;
-    public KeyCode run;
 
     private float moveSpeed;
+    private Vector3 moveDirection;
 
     private Vector3 _mosePosition;
     private Transform _trans;
@@ -20,6 +19,8 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
         _trans = this.transform;
         _playerController = this.GetComponent<CharacterController>();
+
+        moveDirection = Vector3.zero;
 	}
 	
 	// Update is called once per frame
@@ -31,16 +32,15 @@ public class PlayerControl : MonoBehaviour {
         _mosePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.y));
         _trans.LookAt(_mosePosition + Vector3.up * _trans.position.y);
 
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
         if (Input.GetKey(sneak)) {
-            Debug.Log("sneak");
+            moveDirection = _trans.TransformDirection(moveDirection);
             moveSpeed = sneakSpeed;
-        } else if (Input.GetKey(run)) {
-            Debug.Log("run");
-            moveSpeed = runSpeed;
         }else{
             moveSpeed = walkSpeed;
         }
 
-        _playerController.SimpleMove(new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0, Input.GetAxis("Vertical") * moveSpeed));
+        _playerController.SimpleMove(moveDirection * moveSpeed);
     }
 }
