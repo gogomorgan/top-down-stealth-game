@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 39428d8fde81c4138ad7ed1b03207097
-timeCreated: 1480693211
+guid: 7dcd9c6b52db44eacbb8998e419260cf
+timeCreated: 1480701077
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -22,10 +22,10 @@ ModelImporter:
     4300000: Eyeball
     4300002: LeftEyelid
     4300004: RightEyelid
-    7400000: Sleeping
+    7400000: WakingUp
     7400002: EyeOpened
     7400004: Stuned
-    7400006: WakingUp
+    7400006: Sleeping
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -49,17 +49,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sleeping
+      name: WakingUp
       takeName: Take 001
-      firstFrame: 42
-      lastFrame: 44
+      firstFrame: 0
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -157,17 +157,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: WakingUp
+      name: Sleeping
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 25
+      firstFrame: 42
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
