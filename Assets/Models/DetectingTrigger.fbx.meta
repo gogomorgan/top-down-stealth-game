@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 469be7a4c0efd43da8e02fbe79ba267c
-timeCreated: 1480716773
+guid: 2cacdd607f9c149d2808c752f07dec51
+timeCreated: 1480707013
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: ground
-    100002: //RootNode
-    100004: Maze
-    400000: ground
-    400002: //RootNode
-    400004: Maze
-    2300000: ground
-    2300002: Maze
-    3300000: ground
-    3300002: Maze
-    4300000: ground
-    4300002: Maze
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: DetectingTrigger
   materials:
     importMaterials: 1
     materialName: 0
