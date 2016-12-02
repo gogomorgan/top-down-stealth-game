@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 01d3b5f7523c29848b5b252ddfec46c2
-timeCreated: 1480631924
+guid: 39428d8fde81c4138ad7ed1b03207097
+timeCreated: 1480693211
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -22,8 +22,10 @@ ModelImporter:
     4300000: Eyeball
     4300002: LeftEyelid
     4300004: RightEyelid
-    7400000: Wakeup
-    7400002: OpenEye
+    7400000: Sleeping
+    7400002: EyeOpened
+    7400004: Stuned
+    7400006: WakingUp
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -47,10 +49,82 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wakeup
+      name: Sleeping
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 25
+      firstFrame: 42
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Eyeball
+        weight: 1
+      - path: LeftEyelid
+        weight: 1
+      - path: RightEyelid
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: EyeOpened
+      takeName: Take 001
+      firstFrame: 47
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Eyeball
+        weight: 1
+      - path: LeftEyelid
+        weight: 1
+      - path: RightEyelid
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Stuned
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -83,10 +157,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: OpenEye
+      name: WakingUp
       takeName: Take 001
-      firstFrame: 30
-      lastFrame: 40
+      firstFrame: 0
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
