@@ -5,14 +5,15 @@ public class doorOpenScript : MonoBehaviour {
 
 	private Animator doorAnimator;
 	public AudioClip doorAudio;
-	GameObject keyManager = GameObject.Find("keyChain");
+	AudioSource audio;
+
 
 	// Use this for initialization
 	void Start () 
 	{
 		doorAnimator = this.GetComponent<Animator> ();
-		keyScript = keyManager.GetComponent<keyScript> ();
-
+		keyManager = GameObject.Find ("keyRing").GetComponent<keyScript>();
+		audio = GetComponent<AudioSource> ();
 	
 	}
 
@@ -24,31 +25,31 @@ public class doorOpenScript : MonoBehaviour {
 			if(keyScript.key1Collected == true)
 			{
 				doorAnimator.SetBool ("Open", true);
-				AudioManager.instance.PlaySound (doorAudio);
+				audio.PlayOneShot (doorAudio, 1f);
 			}
 			break;
 
 		case "door2":
-			if (keyScript == true) 
+			if (keyScript.key2Collected == true) 
 			{
 				doorAnimator.SetBool ("Open", true);
-				AudioManager.instance.PlaySound (doorAudio);
+				audio.PlayOneShot (doorAudio, 1f);
 			}
 			break;
 
 		case "door3":
-			if (keyScript == true) 
+			if (keyScript.key3Collected == true) 
 			{
 				doorAnimator.SetBool ("Open", true);
-				AudioManager.instance.PlaySound (doorAudio);
+				audio.PlayOneShot (doorAudio, 1f);
 			}
 			break;
 
 		case "door4":
-			if (keyScript == true) 
+			if (keyScript.key4Collected == true) 
 			{
 				doorAnimator.SetBool ("Open", true);
-				AudioManager.instance.PlaySound (doorAudio);
+				audio.PlayOneShot (doorAudio, 1f);
 			}
 			break;
 
